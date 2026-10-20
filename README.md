@@ -70,6 +70,58 @@ $even-my-grandma-can-do-it
 Help me push this branch and open a pull request. Give me one step at a time.
 ```
 
+## Example questions and responses
+
+These are illustrative exchanges, not commands to run in this skill repository. In a real project, the AI checks the actual paths, commands, and prerequisites before giving instructions.
+
+### Running a prepared script
+
+**You ask:**
+
+> The report script is ready. How do I run it myself?
+
+**AI responds:**
+
+You can do this part yourself to save tokens. Here's how.
+
+1. Open Terminal and go to your project folder:
+
+   ```sh
+   cd "/Users/alex/projects/sales-report"
+   ```
+
+2. Run the prepared script:
+
+   ```sh
+   python3 scripts/generate_report.py
+   ```
+
+   Wait until the terminal prompt returns. The script should print `Report saved to output/report.csv`.
+
+3. Open `output/report.csv` from your project's `output` folder and check that the report contains the expected data.
+
+If the command fails or the file is missing, stop and send me the command plus the relevant error lines. Remove any private data first. I haven't run the script, so its result is not yet verified.
+
+### Getting help when a simple step fails
+
+**You ask:**
+
+> I ran it, but got `ModuleNotFoundError: No module named 'pandas'`. What now?
+
+**AI responds:**
+
+That error means the Python interpreter running the script cannot find `pandas`. It does not necessarily mean you need to install it globally; the project may already have its own environment.
+
+1. In the same terminal, run:
+
+   ```sh
+   python3 -m pip --version
+   ```
+
+2. Send me that output, with personal path details redacted if needed. I'll use it with the project's dependency configuration to identify the correct environment and next command.
+
+Don't install packages globally or keep retrying the script yet.
+
 ## What stays with the AI
 
 - Unsolved bugs, implementation decisions, and Git conflicts.
