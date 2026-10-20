@@ -1,0 +1,4 @@
+interface:
+  display_name: "Even My Grandma Can Do It"
+  short_description: "Save tokens with clear, do-it-yourself handoffs"
+  default_prompt: "Use $even-my-grandma-can-do-it to hand me the simple steps and spend AI effort only where it adds value."
