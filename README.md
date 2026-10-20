@@ -70,8 +70,6 @@ $even-my-grandma-can-do-it
 Help me push this branch and open a pull request. Give me one step at a time.
 ```
 
-The skill instructions are entirely in English. The AI's explanations follow the language you use.
-
 ## What stays with the AI
 
 - Unsolved bugs, implementation decisions, and Git conflicts.
