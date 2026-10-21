@@ -27,7 +27,7 @@ With the Codex skill installer available, ask:
 Install the skill from https://github.com/masa-rafik/even-my-grandma-can-do-it
 ```
 
-This repository is private. Your installation environment must have access to it.
+This repository is public.
 
 ### Manual installation on macOS or Linux
 
@@ -129,7 +129,29 @@ Don't install packages globally or keep retrying the script yet.
 - Checking that commands match the actual project rather than guessing.
 - Explaining risks before destructive, production, or publishing operations.
 
-This is not a refusal-to-work skill. If you explicitly ask the agent to execute the task or finish end-to-end, it should honor that request within its permissions.
+## Manual by default, even when you ask for execution
+
+"Commit my changes", "push it", "open a PR", and "finish everything" are **not overrides**. The AI should give you manual steps rather than perform these routine actions. Implementation and debugging still stay with the AI.
+
+To deliberately let the AI execute a routine action, explicitly override the manual-handoff rule and name the action:
+
+```text
+Override the manual handoff: commit and push these changes yourself.
+```
+
+The override covers only those actions for that task. Asking for a commit does not authorize a push, and neither authorizes a merge or deployment. Future tasks return to manual handoffs. This is a behavioral instruction, not a technical restriction on tool access.
+
+### Example: a commit request is still a handoff
+
+**You ask:**
+
+> Please commit my changes.
+
+**AI responds:**
+
+I'll help you commit them manually. First, I'll check the branch and changed files so I can give you exact staging commands and a suitable commit message. I won't stage, commit, or push anything myself.
+
+If you want me to execute instead, say: "Override the manual handoff: commit these changes yourself."
 
 ## Safety and expectations
 
